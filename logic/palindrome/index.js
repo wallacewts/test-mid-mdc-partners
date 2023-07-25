@@ -1,7 +1,6 @@
 import readlineSync from "readline-sync";
-import { showMenuOptions } from "../menu-options/index.js";
 
-export const checkPalindrome = () => {
+export const checkPalindrome = (showMenuOptions) => {
   const text = readlineSync.question("Type a word or phrase:\n").toLowerCase();
   const replacedText = text.trim().replace(/[\s\-\´\'\’\"\,\.\;\:\!\?]/g, "");
   const reverse = replacedText.split("").reverse().join("");

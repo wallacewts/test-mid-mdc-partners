@@ -1,7 +1,6 @@
 import readlineSync from "readline-sync";
-import { showMenuOptions } from "../menu-options/index.js";
 
-export const calculateFibonnaci = () => {
+export const calculateFibonnaci = (showMenuOptions) => {
   const number = readlineSync.questionInt("Type an integer number:\n");
   let j = 1;
   let i = 0;

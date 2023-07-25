@@ -1,7 +1,6 @@
 import readlineSync from "readline-sync";
-import { showMenuOptions } from "../menu-options/index.js";
 
-export const calculateFactorial = () => {
+export const calculateFactorial = (showMenuOptions) => {
   const number = readlineSync.questionInt("Type an integer number:\n");
   let count = 1;
 

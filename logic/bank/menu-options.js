@@ -1,4 +1,7 @@
 import readlineSync from "readline-sync";
+import { BankAccount } from "./bank-account.js";
+import { SavingAccount } from "./saving-account.js";
+import { CheckingAccount } from "./checking-account.js";
 
 export const showBankMenuOptions = () => {
   const menuOptions = {
@@ -47,6 +50,25 @@ export const accountOptions = (account) => {
     },
     e: () => {
       showBankMenuOptions();
+
+      return true;
+    },
+  });
+};
+
+export const bankOptions = (showMenuOptions) => {
+  const bankAccount = new BankAccount();
+  const savingAccount = new SavingAccount();
+  const checkingAccount = new CheckingAccount();
+
+  showBankMenuOptions();
+
+  return readlineSync.promptCLLoop({
+    a: () => accountOptions(bankAccount),
+    s: () => accountOptions(savingAccount),
+    c: () => accountOptions(checkingAccount),
+    e: () => {
+      showMenuOptions();
 
       return true;
     },
