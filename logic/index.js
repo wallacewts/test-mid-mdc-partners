@@ -9,6 +9,13 @@ import {
   checkIfIsEmpty,
   showStackElement,
 } from "./stack/index.js";
+import {
+  BankAccount,
+  CheckingAccount,
+  SavingAccount,
+  accountOptions,
+  showBankMenuOptions,
+} from "./bank/index.js";
 
 showMenuOptions();
 
@@ -26,6 +33,24 @@ readlineSync.promptCLLoop({
       r: () => removeStackElement(stack),
       s: () => showStackElement(stack),
       c: () => checkIfIsEmpty(stack),
+      e: () => {
+        showMenuOptions();
+
+        return true;
+      },
+    });
+  },
+  b: () => {
+    const bankAccount = new BankAccount();
+    const savingAccount = new SavingAccount();
+    const checkingAccount = new CheckingAccount();
+
+    showBankMenuOptions();
+
+    return readlineSync.promptCLLoop({
+      a: () => accountOptions(bankAccount),
+      s: () => accountOptions(savingAccount),
+      c: () => accountOptions(checkingAccount),
       e: () => {
         showMenuOptions();
 

@@ -4,6 +4,7 @@ export const showMenuOptions = () => {
     fi: "Calculate Fibonnaci",
     p: "Checks Palindrome",
     s: "Stack",
+    b: "Bank",
     e: "Exit",
   };
 
