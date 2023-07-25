@@ -1,0 +1,14 @@
+{
+  "name": "test-mid-mdc-partners",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {},
+  "keywords": [],
+  "type": "module",
+  "author": "Matheus Wallace",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "1.4.10"
+  }
+}
