@@ -4,6 +4,7 @@ import { checkPalindrome } from "./palindrome/index.js";
 import { calculateFibonnaci } from "./fibonnaci/index.js";
 import { bankOptions } from "./bank/index.js";
 import { stackOptions } from "./stack/index.js";
+import { wordCountMenuOption } from "./word-count/index.js";
 
 const showMenuOptions = () => {
   const menuOptions = {
@@ -12,6 +13,7 @@ const showMenuOptions = () => {
     p: "Checks Palindrome",
     s: "Stack",
     b: "Bank",
+    w: "Word Count",
     e: "Exit",
   };
 
@@ -20,13 +22,16 @@ const showMenuOptions = () => {
   console.table(menuOptions);
 };
 
-showMenuOptions();
+const initialOptions = () =>
+  readlineSync.promptCLLoop({
+    fa: () => calculateFactorial(showMenuOptions),
+    fi: () => calculateFibonnaci(showMenuOptions),
+    p: () => checkPalindrome(showMenuOptions),
+    s: () => stackOptions(showMenuOptions),
+    b: () => bankOptions(showMenuOptions),
+    w: () => wordCountMenuOption(showMenuOptions, initialOptions),
+    e: () => true,
+  });
 
-readlineSync.promptCLLoop({
-  fa: () => calculateFactorial(showMenuOptions),
-  fi: () => calculateFibonnaci(showMenuOptions),
-  p: () => checkPalindrome(showMenuOptions),
-  s: () => stackOptions(showMenuOptions),
-  b: () => bankOptions(showMenuOptions),
-  e: () => true,
-});
+showMenuOptions();
+initialOptions();
