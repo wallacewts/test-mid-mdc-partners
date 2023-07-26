@@ -1,0 +1,23 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    padding: 2rem;
+    border-radius: 0.2rem;
+    -webkit-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6);
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

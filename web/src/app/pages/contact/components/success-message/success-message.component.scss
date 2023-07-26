@@ -1,0 +1,25 @@
+@use "@angular/material" as mat;
+@import "variables";
+
+section {
+  background-color: mat.get-color-from-palette($primary);
+  position: relative;
+  border-radius: 1rem;
+  width: 20rem;
+  padding: 2rem;
+  margin-top: 2rem;
+
+  button {
+    background-color: transparent;
+    border: none;
+    right: 0;
+    top: 0;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  button,
+  .data {
+    color: mat.get-color-from-palette($primary, "darker-contrast");
+  }
+}

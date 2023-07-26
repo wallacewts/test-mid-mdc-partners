@@ -1,0 +1,17 @@
+<section>
+  <button>
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Close icon"
+      fontIcon="close"
+      (click)="close()"
+    ></mat-icon>
+  </button>
+  <div class="data">
+    <h1>Success!</h1>
+    <p>Name: {{ data?.name }}</p>
+    <p>Email: {{ data?.email }}</p>
+    <p>Subject: {{ data?.subject }}</p>
+    <p>Message: {{ data?.message }}</p>
+  </div>
+</section>
